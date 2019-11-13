@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewHeader" customModule="C1_Intrinsic" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableViewHeader" customModule="C1_Intrinsic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="669" height="187"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VtB-lo-p4d">
+                    <rect key="frame" x="0.0" y="0.0" width="669" height="187"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-2i-7m5">
+                            <rect key="frame" x="313.5" y="83" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykn-Fg-QNq">
+                            <rect key="frame" x="363.5" y="82.5" width="20" height="22"/>
+                            <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="chevron.up.circle" catalog="system"/>
+                            <connections>
+                                <action selector="doUpAction:" destination="-1" eventType="touchUpInside" id="UHD-21-SDn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.027066323909999999" green="0.073370434339999999" blue="0.15681558849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="Ykn-Fg-QNq" firstAttribute="leading" secondItem="4oF-2i-7m5" secondAttribute="trailing" constant="8" id="AR2-Ys-RQR"/>
+                        <constraint firstItem="Ykn-Fg-QNq" firstAttribute="centerY" secondItem="4oF-2i-7m5" secondAttribute="centerY" id="Ebh-iI-jNY"/>
+                        <constraint firstItem="4oF-2i-7m5" firstAttribute="centerY" secondItem="VtB-lo-p4d" secondAttribute="centerY" id="U9d-eb-dnM"/>
+                        <constraint firstItem="4oF-2i-7m5" firstAttribute="centerX" secondItem="VtB-lo-p4d" secondAttribute="centerX" id="a48-4A-PXE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VtB-lo-p4d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4VS-O7-3sc"/>
+                <constraint firstAttribute="bottom" secondItem="VtB-lo-p4d" secondAttribute="bottom" id="RHo-g2-dJ9"/>
+                <constraint firstItem="VtB-lo-p4d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UMP-MK-M91"/>
+                <constraint firstAttribute="trailing" secondItem="VtB-lo-p4d" secondAttribute="trailing" id="uVB-G9-KQ3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="4oF-2i-7m5" id="a7j-MC-b3J"/>
+                <outlet property="upButton" destination="Ykn-Fg-QNq" id="T8k-cD-QDs"/>
+            </connections>
+            <point key="canvasLocation" x="135.50724637681159" y="-82.700892857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.up.circle" catalog="system" width="64" height="62"/>
+    </resources>
+</document>
