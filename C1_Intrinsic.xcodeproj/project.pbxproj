@@ -11,12 +11,14 @@
 		1611F27623770BED002FCE3C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1611F27523770BED002FCE3C /* TableViewCell.xib */; };
 		1611F29F2379A632002FCE3C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F29E2379A632002FCE3C /* Menu.swift */; };
 		1611F2A5237A9E58002FCE3C /* GestureRecognizer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2A4237A9E58002FCE3C /* GestureRecognizer+Extensions.swift */; };
-		1611F2A8237AEC75002FCE3C /* MenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2A7237AEC75002FCE3C /* MenuTableView.swift */; };
+		1611F2A8237AEC75002FCE3C /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2A7237AEC75002FCE3C /* SideMenuTableView.swift */; };
 		1611F2AA237AF227002FCE3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2A9237AF227002FCE3C /* MainViewController.swift */; };
 		1611F2AE237B4777002FCE3C /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2AD237B4777002FCE3C /* UIControl+Extensions.swift */; };
 		1611F2B0237B5E73002FCE3C /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2AF237B5E73002FCE3C /* TableViewHeader.swift */; };
 		1611F2B2237B5E82002FCE3C /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1611F2B1237B5E82002FCE3C /* TableViewHeader.xib */; };
 		1611F2B7237B7A62002FCE3C /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2B6237B7A62002FCE3C /* FilterCollectionViewCell.swift */; };
+		1611F2BA237BFABB002FCE3C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2B9237BFABB002FCE3C /* Product.swift */; };
+		1611F2BC237BFB17002FCE3C /* ProductFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611F2BB237BFB17002FCE3C /* ProductFilter.swift */; };
 		162BF0042376B08200D765FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BF0032376B08200D765FB /* AppDelegate.swift */; };
 		162BF0062376B08200D765FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BF0052376B08200D765FB /* SceneDelegate.swift */; };
 		162BF00B2376B08200D765FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162BF0092376B08200D765FB /* Main.storyboard */; };
@@ -30,12 +32,14 @@
 		1611F27523770BED002FCE3C /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		1611F29E2379A632002FCE3C /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		1611F2A4237A9E58002FCE3C /* GestureRecognizer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureRecognizer+Extensions.swift"; sourceTree = "<group>"; };
-		1611F2A7237AEC75002FCE3C /* MenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableView.swift; sourceTree = "<group>"; };
+		1611F2A7237AEC75002FCE3C /* SideMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
 		1611F2A9237AF227002FCE3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1611F2AD237B4777002FCE3C /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		1611F2AF237B5E73002FCE3C /* TableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
 		1611F2B1237B5E82002FCE3C /* TableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
 		1611F2B6237B7A62002FCE3C /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		1611F2B9237BFABB002FCE3C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		1611F2BB237BFB17002FCE3C /* ProductFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFilter.swift; sourceTree = "<group>"; };
 		162BF0002376B08200D765FB /* C1_Intrinsic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C1_Intrinsic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162BF0032376B08200D765FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		162BF0052376B08200D765FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				162BF0172376B0F900D765FB /* SelfSizedTableView.swift */,
-				1611F2A7237AEC75002FCE3C /* MenuTableView.swift */,
+				1611F2A7237AEC75002FCE3C /* SideMenuTableView.swift */,
 			);
 			path = "Menu Table View";
 			sourceTree = "<group>";
@@ -92,6 +96,16 @@
 				1611F2A9237AF227002FCE3C /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1611F2B8237BFA5B002FCE3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1611F29E2379A632002FCE3C /* Menu.swift */,
+				1611F2B9237BFABB002FCE3C /* Product.swift */,
+				1611F2BB237BFB17002FCE3C /* ProductFilter.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		162BEFF72376B08200D765FB = {
@@ -113,6 +127,7 @@
 		162BF0022376B08200D765FB /* C1_Intrinsic */ = {
 			isa = PBXGroup;
 			children = (
+				1611F2B8237BFA5B002FCE3C /* Model */,
 				1611F2B3237B73BD002FCE3C /* Main */,
 				1611F2AC237B4752002FCE3C /* Color */,
 				1611F2A6237AEC3E002FCE3C /* Menu Table View */,
@@ -123,7 +138,6 @@
 				162BF00C2376B08400D765FB /* Assets.xcassets */,
 				162BF00E2376B08400D765FB /* LaunchScreen.storyboard */,
 				162BF0112376B08400D765FB /* Info.plist */,
-				1611F29E2379A632002FCE3C /* Menu.swift */,
 				1611F2A4237A9E58002FCE3C /* GestureRecognizer+Extensions.swift */,
 			);
 			path = C1_Intrinsic;
@@ -207,11 +221,13 @@
 				1611F2B0237B5E73002FCE3C /* TableViewHeader.swift in Sources */,
 				1611F29F2379A632002FCE3C /* Menu.swift in Sources */,
 				1611F2B7237B7A62002FCE3C /* FilterCollectionViewCell.swift in Sources */,
+				1611F2BA237BFABB002FCE3C /* Product.swift in Sources */,
 				1611F2A5237A9E58002FCE3C /* GestureRecognizer+Extensions.swift in Sources */,
 				162BF0042376B08200D765FB /* AppDelegate.swift in Sources */,
 				162BF0062376B08200D765FB /* SceneDelegate.swift in Sources */,
 				1611F2AA237AF227002FCE3C /* MainViewController.swift in Sources */,
-				1611F2A8237AEC75002FCE3C /* MenuTableView.swift in Sources */,
+				1611F2A8237AEC75002FCE3C /* SideMenuTableView.swift in Sources */,
+				1611F2BC237BFB17002FCE3C /* ProductFilter.swift in Sources */,
 				162BF0182376B0FA00D765FB /* SelfSizedTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

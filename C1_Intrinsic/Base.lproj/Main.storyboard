@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lrh-k7-iaa">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +12,14 @@
             <objects>
                 <viewController id="lrh-k7-iaa" customClass="MainViewController" customModule="C1_Intrinsic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuQ-PU-h1c" customClass="MyView_GradiendBackground" customModule="C1_Intrinsic" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nyE-BT-ElX" userLabel="MainStack View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1000" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-3X-TNC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="SnG-5H-jMj"/>
@@ -73,7 +72,7 @@
                                         </connections>
                                     </collectionView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2000" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-c1-jog">
-                                        <rect key="frame" x="0.0" y="154" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="154" width="600" height="30"/>
                                         <color key="backgroundColor" red="0.26814435930000002" green="0.41876189720000001" blue="0.36264618980000002" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Y93-6c-UOC"/>
@@ -133,10 +132,10 @@
                                         </connections>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Al-5y6">
-                                        <rect key="frame" x="0.0" y="188" width="414" height="576"/>
+                                        <rect key="frame" x="0.0" y="188" width="600" height="412"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="98a-Gk-wLh" customClass="MenuTableView" customModule="C1_Intrinsic" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="576"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="98a-Gk-wLh" customClass="SideMenuTableView" customModule="C1_Intrinsic" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="412"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="lrh-k7-iaa" id="rWg-zQ-rYB"/>
@@ -144,13 +143,13 @@
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-rY-qTm">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="576"/>
+                                                <rect key="frame" x="300" y="0.0" width="300" height="412"/>
                                                 <subviews>
                                                     <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ho-fg-gN1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="576"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="412"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left.and.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VSK-pr-FRA">
-                                                                <rect key="frame" x="0.0" y="283.5" width="15" height="8.5"/>
+                                                                <rect key="frame" x="0.0" y="201.5" width="15" height="8.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -188,7 +187,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-dq-NVT" userLabel="MainView">
-                                <rect key="frame" x="0.0" y="764" width="414" height="98"/>
+                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
                                 <color key="tintColor" red="0.026412333640000001" green="0.06220338643" blue="0.1286286485" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
@@ -206,9 +205,10 @@
                     </view>
                     <connections>
                         <outlet property="menuEdgeView" destination="6aj-rY-qTm" id="4j8-ix-HJ8"/>
-                        <outlet property="menuTableView" destination="98a-Gk-wLh" id="b5Z-le-bJb"/>
                         <outlet property="menuWidthConstraint" destination="3Yz-df-adf" id="bBz-Zd-tCE"/>
                         <outlet property="selectedFilterCollectionView" destination="0vU-c1-jog" id="5v0-4H-ve0"/>
+                        <outlet property="selectedFilterCollectionViewHeightConstraint" destination="Y93-6c-UOC" id="Mya-D1-q2X"/>
+                        <outlet property="sideMenu" destination="98a-Gk-wLh" id="b5Z-le-bJb"/>
                         <outlet property="topMenuCollectionView" destination="2kI-3X-TNC" id="RUm-tV-j94"/>
                     </connections>
                 </viewController>

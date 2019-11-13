@@ -12,12 +12,12 @@ class TableViewHeader: UITableViewHeaderFooterView {
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    var delegate: MenuTableViewDelegate!
+    var delegate: SideMenuItemDelegateProtocol!
     
     @IBOutlet weak var upButton: UIButton!
     
     @IBAction func doUpAction(_ sender: Any) {
-        delegate.scrollUp()
+        delegate.didScrollUp()
     }
     
 }

@@ -1,25 +1,19 @@
 import UIKit
 
 
-protocol MainViewControllerDelegate {
-    func didSelectMenuItem(menuItem: String)
-    func removeFilter(indexPath: IndexPath)
-    func getIndexPath(for cell: UICollectionViewCell) -> IndexPath? 
-}
-
-protocol MenuTableViewDelegate {
-    func scrollUp()
+protocol SideMenuItemDelegateProtocol {
+    func didScrollUp()
+    func didSelectMenuItem(for cell: UITableViewCell, completion: @escaping (Bool)->Void )
 }
 
 
-class MenuTableView: SelfSizedTableView {
+class SideMenuTableView: SelfSizedTableView {
     
     var menues: [Menu]!
     
-    
     var deepIndexSection = -1
     var idx2realIdx = [IndexPath: IndexPath]()
-    var selected = [Int:Menu]()
+    var shown = [Int:Menu]()
     
     var menuWidthConstraint: NSLayoutConstraint!
     var menuOriginalWidth: CGFloat = 0.0
@@ -40,7 +34,7 @@ class MenuTableView: SelfSizedTableView {
     
     var containerView: UIView!
     
-    var mainViewControllerDelegate: MainViewControllerDelegate?
+    var sideMenuDelegate: SideMenuDelegateProtocol?
     
     
     
@@ -76,27 +70,30 @@ class MenuTableView: SelfSizedTableView {
     
     
     public func numberRowsInSection(section: Int) -> Int {
-        return selected[section]?.menuItems.count ?? 1
+        return shown[section]?.menuItems.count ?? 1
     }
     
     public func cellForRowAt(indexPath: IndexPath) -> UITableViewCell {
         let c = dequeueReusableCell(withIdentifier: "Cell") as! TableViewCell
-        if let menu = selected[indexPath.section],
-            let item = menu.menuItems[indexPath.row] {
-            c.setup(text: item)
-            c.changeTextSize(expanded: expanded)
+        if let menu = shown[indexPath.section],
+            let item = menu.menuItem[indexPath.row] {
+                c.delegate = self
+                c.setup(isFilter: menu.isFilter, menuItem: item)
+                c.changeTextSize(expanded: expanded)
         }
         return c
     }
     
     public func viewForHeaderInSection(section: Int) -> UIView {
         let headerView = dequeueReusableHeaderFooterView(withIdentifier: "TableViewHeader") as! TableViewHeader
-        if let menu = selected[section] {
+        if let menu = shown[section] {
             headerView.titleLabel.text = menu.title
         }
         headerView.delegate = self
+        isScrollEnabled = true
         if contentSize.height < UIScreen.main.bounds.size.height {
             headerView.upButton.alpha = 0
+            isScrollEnabled = false
         }
         return headerView
         
@@ -116,10 +113,6 @@ class MenuTableView: SelfSizedTableView {
         deselectRow(at: indexPath, animated: true)
         clickMenuItemAnimation = true
         addMenuSection(indexPath: indexPath)
-        
-        if let item = getMenuItem(indexPath: indexPath) {
-            mainViewControllerDelegate?.didSelectMenuItem(menuItem: item)
-        }
     }
     
     
@@ -129,17 +122,28 @@ class MenuTableView: SelfSizedTableView {
        }
     }
     
+    public func deselectMenuItem(menuItem: MenuItem) {
+        menuItem.selected = false
+        if let indexPaths = indexPathsForVisibleRows {
+            beginUpdates()
+            reloadRows(at: indexPaths, with: .automatic)
+            endUpdates()
+        }
+    }
+    
 
-    private func getMenuItem(indexPath: IndexPath) -> String? {
-        if let menu = selected[indexPath.section],
-            menu.isFilter,
-            let item = menu.menuItems[indexPath.row] {
-             return item
+    private func getMenuItem(indexPath: IndexPath) -> MenuItem? {
+        if let menu = shown[indexPath.section],
+            menu.isFilter {
+            let item = menu.menuItem[indexPath.row]
+            return item
         }
         return nil
     }
     
+    
     private func animateIn(cell: UITableViewCell, withDelay delay: TimeInterval) {
+        return
          let initialScale: CGFloat = 1.2
          let duration: TimeInterval = 0.5
          
@@ -158,7 +162,7 @@ class MenuTableView: SelfSizedTableView {
 
 
 
-extension MenuTableView {
+extension SideMenuTableView {
     
     
 //MARK:- Menu Edge Actions
@@ -317,7 +321,9 @@ extension MenuTableView {
             insertSections(indexSet, with: .fade)
             insertRows(at: indexPaths, with: .fade)
             endUpdates()
-            scrollToRow(at: indexPaths.last!, at: .bottom, animated: true)
+            
+            let indexPath = IndexPath(item: 0, section: deepIndexSection)
+            scrollToRow(at: indexPath, at: .top, animated: true)
         }
     }
     
@@ -332,7 +338,7 @@ extension MenuTableView {
             idxPaths[deepIndexSection] = nil
             
             let indexSet = IndexSet(integer: deepIndexSection)
-            selected[deepIndexSection] = nil
+            shown[deepIndexSection] = nil
             rowsInSection[deepIndexSection] = 0
             deepIndexSection -= 1
             beginUpdates()
@@ -345,7 +351,7 @@ extension MenuTableView {
     
     private func addSelectedMenuItem(indexPath: IndexPath?, menu: Menu?) {
         if let idx = indexPath {
-            selected[idx.section] = menu
+            shown[idx.section] = menu
         }
     }
     
@@ -360,10 +366,20 @@ extension MenuTableView {
     }
 }
 
-extension MenuTableView: MenuTableViewDelegate {
-    func scrollUp() {
+extension SideMenuTableView: SideMenuItemDelegateProtocol {
+    
+    func didScrollUp() {
         if let indexPaths = idxPaths[0] {
           scrollToRow(at: indexPaths.last!, at: .bottom, animated: true)
+        }
+    }
+    
+    func didSelectMenuItem(for cell: UITableViewCell, completion: @escaping (Bool)->Void ) {
+        if let index = indexPath(for: cell),
+        let item = getMenuItem(indexPath: index) {
+            item.selected = !item.selected
+            completion(item.selected)
+            sideMenuDelegate?.didSelectMenuItem(menuItem: item)
         }
     }
 }

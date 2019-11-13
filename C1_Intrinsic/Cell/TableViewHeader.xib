@@ -23,7 +23,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykn-Fg-QNq">
                             <rect key="frame" x="363.5" y="82.5" width="20" height="22"/>
-                            <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.02359312325" green="0.2535461759" blue="0.44574873100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" image="chevron.up.circle" catalog="system"/>
                             <connections>
                                 <action selector="doUpAction:" destination="-1" eventType="touchUpInside" id="UHD-21-SDn"/>

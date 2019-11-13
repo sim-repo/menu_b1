@@ -4,11 +4,16 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var filterLabel: UILabel!
     
-    var mainViewControllerDelegate: MainViewControllerDelegate?
+    var menuItem: MenuItem?
+    
+    var delegate: FilterDelegateProtocol?
+    
+    func setup(menuItem: MenuItem) {
+        self.menuItem = menuItem
+        filterLabel.text = menuItem.title
+    }
     
     @IBAction func doRemoveFilter(_ sender: Any) {
-        if let idx = mainViewControllerDelegate?.getIndexPath(for: self) {
-            mainViewControllerDelegate?.removeFilter(indexPath: idx)
-        }
+        delegate?.didRemoveFilter(for: self)
     }
 }
